@@ -1,5 +1,7 @@
 import React from "react";
 import "./Body.css";
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -20,7 +22,15 @@ export default function Riskchecker({ props }) {
         Check to ascertain your risk level and determine if you might need the helpline or not
             (Will take less than 2mins)
         </h3>
-            <button type="button" className=" mine block focus:outline-none mx-auto px-10 rounded-full text-xl font-medium py-2 mt-4 bg-indigo-700 text-white ">start</button></li>
+        </li>
+            <button type="button" 
+                className="pillbutton mine block
+                focus:outline-none mx-auto px-10
+                rounded-full text-xl font-medium
+                py-2 mt-4 bg-indigo-700 text-white ">
+                    <Link to="/" className="start-button">  start </Link>
+                   
+            </button>
             </ul>   
     </div>
     

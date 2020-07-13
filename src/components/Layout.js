@@ -5,8 +5,10 @@ export default function Layout({ children }) {
   return (
     <div>
         <Navbar />
+        <div style={{marginBottom:"50px"}}></div>
+    	
         {children}
-    	<Body/>
+        
     </div>
   );
 }

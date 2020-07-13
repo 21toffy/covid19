@@ -1,18 +1,67 @@
-.navbar-custom {
+/* .navbar-custom {
     background-color: rgba(255,255,255,.5);
-}/* change the brand and text color */
-.navbar-custom .navbar-brand,
+}
 .navbar-custom .navbar-text {
     color: #888;
-}/* change the link color */
-.navbar-custom .navbar-nav .nav-link {
-    color:#0000 ;
-}/* change the color of active or hovered links */
+}
 .navbar-custom .nav-item.active .nav-link,
 .navbar-custom .nav-item:hover .nav-link {
     color: #000;
 }
+*/
+                    .navbar-custom .navbar-nav .nav-link {
+                        color:#0000 ;
+                    }
 
+.risk-checker{
+    color:orangered;
+}
+.other-nav-links{
+    color:#5a67d8;
+}
 .link-color{
     columns: #000080;
+} 
+
+.pillbutton {
+
+    background-color: rgb(155, 152, 152);
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 2px 1px;
+    cursor: pointer;
+    border-radius: 16px;
+    background-color: #5a67d8;
+    /* text-align: right; */
+
+}
+
+nav[data-v-5da7d0aa] {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    align-items: center;
+    border-width: 2px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+}
+.relative {
+    position: relative;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+    margin: 0;
+}
+* {
+    transition: all .3s ease-in;
 }

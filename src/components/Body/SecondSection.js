@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Body.css";
 import axios from "axios";
-import Riskchecker from './Riskchecker';
-import { Link } from 'react-router-dom';
-
 
 export default function FirstSection ({ props }) {
 
@@ -111,10 +108,10 @@ export default function FirstSection ({ props }) {
     </div>
     </div>
 
-    <Riskchecker />
 
 
 
+    
 
     <div className="second-section">
 
@@ -154,18 +151,13 @@ export default function FirstSection ({ props }) {
     <div className="card-body">
 
 
-    <button type="button" 
-        className="btn2 mine block
-        focus:outline-none mx-auto 
-        px-10 rounded-full text-xl
-        font-medium py-2 mt-4
-        bg-indigo-700 text-white ">
-            <Link to="/" className="nav-link">  Report a case </Link></button>
+    {/* <button type="button" className="btn2 mine block focus:outline-none mx-auto px-10 rounded-full text-xl font-medium py-2 mt-4 bg-indigo-700 text-white ">report now</button> */}
      <p className="btn">Early Infection Sources</p>
  
-    {/* <button  class="pillbutton block focus:outline-none mx-auto px-10 text-xl font-medium py-2 mt-4">
-    <Link to="/" className="nav-link">  Report a case <Link>
-    </button> */}
+    <button  class="pillbutton block focus:outline-none mx-auto px-10 text-xl font-medium py-2 mt-4">
+                             Report a case
+                         </button>
+       
        
         
     </div>
