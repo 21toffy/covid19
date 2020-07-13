@@ -1,0 +1,236 @@
+
+
+  {
+    state: "Abia",
+    phone1:"07002242362" ,
+    phone2:"0700ABIADOC" ,
+    phone3:""
+        },
+          {
+    state: "Adamawa",
+    phone1:"08031230359" ,
+    phone2:"07080601139" ,
+    phone3:""
+        }, 
+         {
+    state: "Akwa Ibom",
+    phone1:"08028442194" ,
+    phone2:"08037934966," ,
+    phone3:"09023330092"
+        }, 
+        
+        {
+    state: "Anambra",
+    phone1:"08145434416" ,
+    phone2:"08030953771" ,
+    phone3:"08117567363"
+        },  {
+    state: "Bauchi",
+    phone1:"08023909309" ,
+    phone2:"08032717887" ,
+    phone3:"08059600898",
+        },  {
+    state: "Bayelsa",
+    phone1:"08039216821" ,
+    phone2:"07019304970," ,
+    phone3:"08151693570",
+        },  {
+    state: "Benue",
+    phone1:"09018602439" ,
+    phone2:"07025031214" ,
+    phone3:"",
+        },  {
+            
+
+
+    state: "Borno",
+    phone1:"08088159881" ,
+    phone2:"08009999999" ,
+    phone3:"",
+        }, 
+
+{
+    state: " Cross River",
+    phone1:"09036281412" ,
+    phone2:"08050907736-WhatsAp" ,
+    phone3:"",
+        },  {
+            
+
+
+
+    state: "Delta",
+    phone1:"08033521961" ,
+    phone2:"08035078541" ,
+    phone3:"08030758179"
+        },  {
+    state: "Ebonyi",
+    phone1:"08037433129" ,
+    phone2:"08125915350" ,
+    phone3:"09020332489"
+        },  {
+    state: "Edo",
+    phone1:"08084096723" ,
+    phone2:"08064258163" ,
+    phone3:"080358385529"
+        },  
+        {
+    state: "Ekiti",
+    phone1:"112" ,
+    phone2:"09062970434" ,
+    phone3:"09082970435"
+        },
+          {
+    state: "Enugu",
+    phone1:"117" ,
+    phone2:"112" ,
+    phone3:"08182555550"
+        },  
+        {
+    state: "FCT - Abuja",
+    phone1:"08099936312" ,
+    phone2:"07080631500" ,
+    phone3:""
+        },
+          {
+    state: "Gombe",
+    phone1:"07025116657" ,
+    phone2:"07026256569" ,
+    phone3:""
+        },  
+        {
+    state: "Imo",
+    phone1:"08099555577" ,
+    phone2:"07087110839" ,
+    phone3:""
+        },
+          {
+    state: "Jigawa",
+    phone1:"08069323005" ,
+    phone2:"08036440532" ,
+    phone3:"08038806682"
+        },  
+        {
+    state: "Kaduna",
+    phone1:"08025088304" ,
+    phone2:"08032401473" ,
+    phone3:"08035871662"
+        },  {
+    state: "Kano",
+    phone1:"09093995333" ,
+    phone2:"09093995444" ,
+    phone3:""
+        },  {
+    state: "Katsina",
+    phone1:"09035037114" ,
+    phone2:"09047092428" ,
+    phone3:""
+        },  {
+    state: "Kebbi",
+    phone1:"08036782507" ,
+    phone2:"08036074588" ,
+    phone3:""
+        },  {
+    state: "Kogi",
+    phone1:"07088292249" ,
+    phone2:"08150953486" ,
+    phone3:""
+        },  {
+    state: "Kwara",
+    phone1:"08064369063" ,
+    phone2:"09029397826" ,
+    phone3:""
+        }, 
+         {
+    state: "Lagos",
+    phone1:"08000CORONA" ,
+    phone2:"0800027662" ,
+    phone3:""
+        },  
+        {
+    state: "Nasarawa",
+    phone1:"08036018579" ,
+    phone2:"08035871718" ,
+    phone3:""
+        }, 
+         {
+    state: "Niger",
+    phone1:"08038246018" ,
+    phone2:"09093093642" ,
+    phone3:""
+        },  
+        {
+    state: "Ogun",
+    phone1:"08188978393" ,
+    phone2:"08188978392" ,
+    phone3:""
+        },  
+        {
+    state: "Ondo",
+    phone1:"0800COVID19" ,
+    phone2:"08002684319" ,
+    phone3:"0700COVID19"
+        },  {
+    state: "Osun",
+    phone1:"293" ,
+    phone2:"08035025692" ,
+    phone3:"08033908772"
+        },  {
+    state: "Oyo",
+    phone1:"08095394000" ,
+    phone2:"08095963000" ,
+    phone3:"08078288999"
+        },  {
+    state: "Plateau",
+    phone1:"07032864444" ,
+    phone2:"08035422711" ,
+    phone3:"08065486416"
+        },  {
+    state: "Rivers",
+    phone1:"08056109538" ,
+    phone2:"08031888093" ,
+    phone3:"08033124314"
+        },  {
+    state: "Sokoto",
+    phone1:"07031936037" ,
+    phone2:"08022069567" ,
+    phone3:"08035074228"
+        }, 
+         {
+    state: "Taraba",
+    phone1:"08032501165" ,
+    phone2:"08065508675" ,
+    phone3:"08039359368"
+        },  
+        {
+    state: "Yobe",
+    phone1:"08131834764" ,
+    phone2:"07041116027" ,
+    phone3:""
+        },   
+        {
+    state: "Zamfara",
+    phone1:"08035626731",
+    phone2:"08035161538";
+    phone3:"08161330774"
+
+        }
+
+
+
+
+im filling for (mysef, someone else)
+fullname
+phone number
+email adress
+ gender (male, female)
+ Have you experience any of the following symptoms in the last 1 weeks?(no symptoms,shortness of breath, nasal congestion
+ drycough, fever, sore throat, runny nose,diarrhea, abdominal pain, aches and pains, fatigue,
+ pressure on the test)
+
+
+ Have you been to any country(ies) outside your country of residence in the past month?(yes, no)
+
+Have you been in contact with any confirmed (COVID-19) case?(yes, no)
+Are you under treatment for any other ailment?(yes, no)
+country, state, adress<submit>

@@ -1,0 +1,46 @@
+.body{
+    background-color: #e2e8f0
+}
+
+.blog-post{
+    background-color: #fff;
+    margin:10px 10px 10px 10px;
+    padding:40px 30px 20px 30px;
+
+}
+
+
+.read-more-button{
+    padding-left: 30px;
+    padding-top: 10px;
+    color: #fff;
+    
+}
+
+.dashboard-text{
+    padding-left: 30px;
+    padding-bottom:1px ;
+    color:#637386;
+    text-align: left;
+
+}
+
+.dashboard-title{
+    padding-left: 30px;
+    padding-bottom:10px ;
+    color:#17375e;
+    text-align: left;
+
+}
+.card{
+    /* padding-left:0px; */
+}
+
+.stats-container{
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.individual-card{
+    padding-bottom: 10px;
+}
