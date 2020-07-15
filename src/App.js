@@ -15,6 +15,8 @@ import Body from "./components/Body/Body";
 
 import Map from "./components/Map/Map";
 
+import ReportForm from "./components/Report/ReportForm";
+
 
 
 
@@ -30,7 +32,8 @@ function App() {
           <Route path="/" exact component={Body} />
           <Route path="/risk-check" exact component={Quiz} /> 
           <Route path="/news-update" component={News} />
-          <Route path="/Map" component={Map} /> 
+          <Route path="/Report" component={ReportForm} />
+
         </Switch>
       </Router>
     </div>
