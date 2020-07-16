@@ -17,13 +17,6 @@ import Map from "./components/Map/Map";
 
 import ReportForm from "./components/Report/ReportForm";
 
-
-
-
-
-
-
-
 function App() {
   return (
     <div className="App">
