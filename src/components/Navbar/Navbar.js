@@ -1,9 +1,21 @@
 import React from "react";
 import "./Navbar.css";
 import { Link } from 'react-router-dom';
+import RepertForm from "./Report/RepertForm";
+import React, { useState, useEffect }
+import { Link } from 'react-router-dom';
 
 
 const Navbar = ({children}) => {
+    const [popup, setPopup] = useState([show:false]);
+
+
+    const showPopUp = e => {
+        e.preventDefault();
+        
+        setPopup!this.state.showPopup  ;
+      };    
+
     return (
 
         <nav className=" navbar navbar-light py-0  bg- navbar-expand-lg py-md-0 relative"data-v-5da7d0aa="" data-v-83937a64="">
