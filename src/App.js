@@ -13,7 +13,6 @@ import Quiz from "./components/Quiz/Quiz";
 import Body from "./components/Body/Body";
 
 
-import Map from "./components/Map/Map";
 
 import formModalWrapper from "./components/Report/ReportForm";
 

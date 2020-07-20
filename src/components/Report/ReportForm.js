@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './ReportForm.css';
 import axios from 'axios';
 import './states.js';
-import PersonTitle from './ReportComponents/PersonTitle';
 
 
 const nStates = ['abuja', 'abia', 'adamawa','akwa','anambra','bauchi','bayelsa','benue','borno','cross river','delta','ebonyi','edo','ekiti','enugu','gombe','imo','jigawa','kaduna','kano','katsina','kebbi','kogi','kwara','lagos','nassarawa','niger','ogun','ondo','osun','oyo','plateaue','rivers','sokoto','taraba','yobe','zamfara'];
@@ -14,11 +13,7 @@ var Allsymptoms=[
     { id: 1, title: 'shortness of breadth' },
     { id: 2, title: 'nasal congestion' }
 ]
-const BUTTONS = [
-    { id: 0, title: 'button1' },
-    { id: 1, title: 'button2' },
-    { id: 2, title: 'button3' }
-]
+
 
 const ReportForm =({closeModal})=> {
     const [values, setValues] = useState([]);
@@ -34,9 +29,8 @@ const ReportForm =({closeModal})=> {
     const [state, setState] = useState("Lagos");
 
     let myRef;
-    let myScdRef;
     useEffect(() =>{
-        document.addEventListener('click',closeFormModal, closeFormModalForX);
+        document.addEventListener('click',closeFormModal);
     }, []);
     
     const closeFormModal =(e)=>{
@@ -44,11 +38,7 @@ const ReportForm =({closeModal})=> {
             closeModal();
         }
     }
-    const closeFormModalForX =(e)=>{
-        if(myScdRef && myScdRef.contains(e.target)){
-            closeModal();
-        }
-    }
+    
 
 
 
@@ -224,8 +214,13 @@ const ReportForm =({closeModal})=> {
                 <div  data-v-2d7880ea="">
                     <div className='modal-wrapper' >
                     <form onSubmit={handleFormSubmit} ref={(node) => (myRef = node)} className="form">
-                 <button className="close-form"  onClick={closeFormModal}><h1>x</h1></button>
-
+                 {/* <button className="close-form"  onClick={closeFormModal}><h1>x</h1></button> */}
+                 {/* <button
+          className="btn btn-danger float-right mr-1"
+          onClick={closeFormModal}
+        >
+          Cancel
+        </button> */}
                 {/* title */}
 
 

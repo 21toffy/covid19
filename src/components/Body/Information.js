@@ -11,7 +11,7 @@ export default function Information({ props }) {
 
     return(
 
-        <div className="second-section">
+        <div className="second-section2">
 
             <div className= "row stats-container">
 

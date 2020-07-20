@@ -28,7 +28,7 @@ function Number({ number }) {
 }
 
 export default function Hotline({ props }) {
-    const [hotlines, setHotline] = useState([
+    const [hotlines] = useState([
         
 
   {

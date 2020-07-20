@@ -3,7 +3,6 @@ import "./Body.css";
 import axios from "axios";
 import Riskchecker from './Riskchecker';
 import { Link } from 'react-router-dom';
-import ReportForm from './../Report/ReportForm';
 
 export default function FirstSection ({ props }) {
 
@@ -46,7 +45,7 @@ export default function FirstSection ({ props }) {
     <div className="row">
 
 
-    <div  className="individual-card col-md-3 col-sm-12">
+    <div  className="col-md-3 col-sm-12">
         <div className="card">
             <div className="card-body">
                 <p className="card-title">Total Cases </p>
@@ -64,7 +63,7 @@ export default function FirstSection ({ props }) {
     
 
 
-    <div className="individual-card col-md-3 col-sm-12">
+    <div className="col-md-3 col-sm-12">
         <div className="card">
             <div className="card-body">
                 <p className="card-title">currently hospitalized</p>
@@ -79,7 +78,7 @@ export default function FirstSection ({ props }) {
         </div>
     </div>
 
-    <div className="individual-card col-md-3 col-sm-12">
+    <div className="col-md-3 col-sm-12">
         <div className="mr-3 card">
             <div className="card-body">
                 <p className="card-title">Deaths</p>
@@ -93,14 +92,13 @@ export default function FirstSection ({ props }) {
     </div>
 
 
-    <div className="individual-card col-md-3 col-sm-12">
+    <div className="col-md-3 col-sm-12">
         <div className="mr-1 card">
             <div className="card-body">
-                <p className="card-title">Discharged
-                <h2>{overall.discharged}</h2><small>
+                Discharged
+                <h2 className="card-title">{overall.discharged}</h2><small>
                {recoveryPercentage} % of total
                </small>
-               </p>
                
                 
             </div>
@@ -119,13 +117,13 @@ export default function FirstSection ({ props }) {
 
     <div className= "row stats-container">
 
-        <div className= "col-md-6 individual-card2">
+        <div className= "col-md-6 ">
             
         <table style={{width:"100%"}}>
         
-            <th>
+            {/* <th>
             <input className="form-control" type="text" placeholder="Search" aria-label="Search"/>
-            </th>
+            </th> */}
             <tr>
                 <th  className="table-extra">state</th>
                 <th  className="table-extra">casses</th>
@@ -133,7 +131,7 @@ export default function FirstSection ({ props }) {
             <th  className="table-extra">deaths</th>
             </tr>
             {states.map((stat, index) => (
-            //  <div  className= "col-md-6 individual-card">
+            //  <div  className= "col-md-6 >
                     <tr key={stat._id} index={stat._id}>
                         <td  className="table-extra">{stat.state}</td>
                         <td className="confirmed">{stat.confirmedCases}</td>
@@ -146,9 +144,10 @@ export default function FirstSection ({ props }) {
              ))}
         </table>
         </div>
-        <div className= "col-md-6 individual-card3">
 
-<div className="individual-card ">
+<div className= "col-md-6 ">
+
+<div className="">
 <div className="mr-1 card">
     <div className="card-body">
 
@@ -172,7 +171,7 @@ export default function FirstSection ({ props }) {
 </div>
 
 
-<div className="individual-card ">
+<div className="">
 <div className="mr-1 card">
     <div className="card-body">
         <h5 className="card-title">Residents of Atiku Abubakar's Estate 
@@ -188,7 +187,7 @@ export default function FirstSection ({ props }) {
 
 
 
-<div className="individual-card">
+<div className="">
 <div className="mr-1 card">
     <div className="card-body">
         <p>On 20/03/2020</p>
@@ -204,7 +203,7 @@ export default function FirstSection ({ props }) {
 </div>
 
 
-<div className="individual-card ">
+<div className="">
 <div className="mr-1 card">
     <div className="card-body">
     <p>On 18/03/2020</p>
@@ -221,7 +220,7 @@ export default function FirstSection ({ props }) {
 
 
 
-<div className="individual-card ">
+<div className="">
 <div className="mr-1 card">
     <div className="card-body">
     <h5 className="card-title">Direct or indirect contact with Bauchi State Governor 
@@ -238,7 +237,7 @@ export default function FirstSection ({ props }) {
 
 
 
-<div className="individual-card ">
+<div className="">
 <div className="mr-1 card">
     <div className="card-body">
     <h5 className="card-title">The launch of 2500 Housing unitse 
@@ -254,7 +253,7 @@ export default function FirstSection ({ props }) {
 
 
 
-<div className="individual-card ">
+<div className="">
 <div className="mr-1 card">
     <div className="card-body">
     <h5 className="card-title">NEC meeting with Bauchi State Gov't, or are in close proximity with someone who did</h5>
@@ -267,7 +266,7 @@ export default function FirstSection ({ props }) {
 
 
 
-<div className="individual-card ">
+<div className="">
 <div className="mr-1 card">
     <div className="card-body">
     <h5 className="card-title">You just returned from UK, FRANCE, SPAIN, NETHERLANDS, GERMANY, UAE, CANADA, USA, in the last two weeks 
@@ -277,7 +276,7 @@ export default function FirstSection ({ props }) {
 </div>
 </div>
 
-<div className="individual-card ">
+<div className="">
 <div className="mr-1 card">
     <div className="card-body">
     <h5 className="card-title">
@@ -290,6 +289,7 @@ Flight TK625 Arrival date:
 </div>
 </div>     
 </div>
+
 </div>
 </div>
         </div>

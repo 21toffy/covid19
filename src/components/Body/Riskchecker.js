@@ -15,7 +15,7 @@ export default function Riskchecker({ props }) {
     </div>
 
     <div className="col-md-4">
-    <div className="card" style={{width:"18rem;"}}>
+    <div className="card" style={{width:"18rem"}}>
     <ul className="list-group list-group-flush">
         <li className="list-group-item">Risk Checker</li>
         <li className="list-group-item"><h3>

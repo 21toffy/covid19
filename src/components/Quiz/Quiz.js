@@ -1,5 +1,4 @@
 import React from 'react';
-import Body from "./../Body/Body";
 import Navbar from './../Navbar/Navbar';
 
 import "./Quiz.css";
@@ -114,7 +113,7 @@ class Quiz extends React.Component{
         
     }
     render() {
-        const {  questions, options, currentQuestion, userAnswer, quizEnd } = this.state;
+        const {  questions, options, quizEnd } = this.state;
         if(quizEnd){
             return(
                 <div>
@@ -136,7 +135,7 @@ class Quiz extends React.Component{
                     </div>
                     {/* {currentQuestion === QuizData.length - 1 } */}
                 {options.map(option =>(
-                    <button key={option.id} style={{backgroundColor: option=='no' ? "orange":''  }} className="mybutton" onClick={() => {
+                    <button key={option.id} style={{backgroundColor: option==='no' ? "orange":''  }} className="mybutton" onClick={() => {
                         this.checkAnswer(option); 
                         this.nextQuestionHandler();
                         this.finishHandler();
