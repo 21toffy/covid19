@@ -7,11 +7,22 @@ import ReactDOM from 'react-dom';
 
 
 const Navbar = ({props}) => {
-  
+
+    const [showModal, setShowModal] = useState(false);
+
+    const handleShowModal =()=>{
+        setShowModal(true);
+    }
+
+
+    const handleCloseModal =()=>{
+        setShowModal(false);
+    }
 
     return (
-
-        <nav className=" navbar navbar-light py-0  bg- navbar-expand-lg py-md-0 relative"data-v-5da7d0aa="" data-v-83937a64="">
+<div>
+    
+<nav className=" navbar navbar-light py-0  bg- navbar-expand-lg py-md-0 relative"data-v-5da7d0aa="" data-v-83937a64="">
             <div data-v-5da7d0aa="" class="flex items-center h-16 mb-6 mr-3"><a data-v-5da7d0aa="" href="/" class="text-xl font-medium relative text-indigo-800 nuxt-link-active">
                  KnowCOVID19.
         <sub data-v-5da7d0aa="" class="mb-2 text-yellow-600">ng</sub></a>         </div>
@@ -37,15 +48,17 @@ const Navbar = ({props}) => {
                             </div>
                         )}
                         /> */}
-                            <button class="pillbutton">
+                        
+                            <button onClick={handleShowModal}  class="pillbutton">
                                 Report a case
                             </button>
                         
              </div></Link></li>
                 </ul>
             </div>
-        </nav>
-        
+        </nav>    
+                            {showModal && <ReportForm closeModal={handleCloseModal} />}
+</div>     
 
 );}
 

@@ -15,7 +15,7 @@ import Body from "./components/Body/Body";
 
 import Map from "./components/Map/Map";
 
-import ReportForm from "./components/Report/ReportForm";
+import formModalWrapper from "./components/Report/ReportForm";
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           <Route path="/" exact component={Body} />
           <Route path="/risk-check" exact component={Quiz} /> 
           <Route path="/news-update" component={News} />
-          <Route path="/Report" component={ReportForm} />
+          <Route path="/Report" component={formModalWrapper} />
 
         </Switch>
       </Router>

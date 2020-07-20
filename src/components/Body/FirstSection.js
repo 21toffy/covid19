@@ -3,7 +3,7 @@ import "./Body.css";
 import axios from "axios";
 import Riskchecker from './Riskchecker';
 import { Link } from 'react-router-dom';
-
+import ReportForm from './../Report/ReportForm';
 
 export default function FirstSection ({ props }) {
 
@@ -32,7 +32,6 @@ export default function FirstSection ({ props }) {
 
   return (
     <div className="body">
-
     <p className="dashboard-text" style={{marginTop:"70px"}}>
     Dashboard
     </p>
@@ -113,7 +112,7 @@ export default function FirstSection ({ props }) {
 
     <Riskchecker />
 
-
+{/* <ReportForm/> */}
 
 
     <div className="second-section">

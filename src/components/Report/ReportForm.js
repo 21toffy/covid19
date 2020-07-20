@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './ReportForm.css';
 import axios from 'axios';
 import './states.js';
@@ -19,212 +19,217 @@ const BUTTONS = [
     { id: 1, title: 'button2' },
     { id: 2, title: 'button3' }
 ]
-class ReportForm extends React.Component {
-    state = {
-        display:true,
-        values: [],
-        filling_for_who: "",
-        title: "MR",
-        full_name: "",
-        phone: "",
-        email: "",
-        gender: "Female",
-        traveled: false,
-        contact: false,
-        treatment: false,
-        state: "",
-        address: ""
+
+const ReportForm =({closeModal})=> {
+    const [values, setValues] = useState([]);
+    const [filling_for_who, setFilling_for_who] = useState('My self');
+    const [title, setTitle] = useState('MR');
+    const [naphemad, setNaphemad] = useState(
+        {full_name:'', email:'', address:'', phone:''}
+    );
+    const [gender, setGender] = useState('Female');
+    const [traveled, setTraveled] = useState(false);
+    const [contact, setContact] = useState(false);
+    const [treatment, setTreatment] = useState(false);
+    const [state, setState] = useState("Lagos");
+
+    let myRef;
+    let myScdRef;
+    useEffect(() =>{
+        document.addEventListener('click',closeFormModal, closeFormModalForX);
+    }, []);
+    
+    const closeFormModal =(e)=>{
+        if(myRef && !myRef.contains(e.target)){
+            closeModal();
+        }
     }
-  
+    const closeFormModalForX =(e)=>{
+        if(myScdRef && myScdRef.contains(e.target)){
+            closeModal();
+        }
+    }
+
+
+
 
     
-    handleFormSubmit = (event) =>{
-        // console.log(event.target.value);
+
+    
+    const handleFormSubmit = (event) =>{
+        event.preventDefault()
+        console.log(event.target.value);
         axios.post('http://127.0.0.1:8000/report/', {
-            symptoms:event.target.symptoms.value,
+            // symptoms:event.target.symptoms.value,
             filling_for_who:event.target.filling_for_who.value,
             title:event.target.title.value,
             full_name:event.target.full_name.value,
             phone:event.target.phone.value,
             email:event.target.email.value,
-            gender:event.target.gender.value,
-            traveled:event.target.traveled.value,
-            contact:event.target.contact.value,
-            treatment:event.target.treatment.value,
+            gender:event.target.gender,
+            traveled:event.target.traveled,
+            contact:event.target.contact,
+            treatment:event.target.treatment,
             state:event.target.state.value,
             address:event.target.address.value,
 
         })
     }
 
-    MR = e => {
-        console.log(this.state.title)
+    const MR = e => {
         e.preventDefault();
-        this.setState({
-            title: 'MR'
-    });
+        console.log(title)
+        setTitle("MR");
     
     }
     
-    MRS = e => {
-        console.log(this.state.title)
-    e.preventDefault();
-    this.setState({
-        title: 'MRS'
-    });
+    const MRS = e => {
+        e.preventDefault();
+
+        console.log(title)
+        setTitle("MRS");
+
     }
 
-    MISS = e => {
-        console.log(this.state.title)
-    e.preventDefault();
-    this.setState({
-        title: 'MISS'
-    });
+    const MISS = e => {
+        e.preventDefault();
+
+        console.log(title)
+        setTitle("MISS");
+
     }
 
-    DR = e => {
-        console.log(this.state.title)
-    e.preventDefault();
-    this.setState({
-        title: 'DR'
-    });
+    const DR = e => {
+        e.preventDefault();
+
+        console.log(title)
+        setTitle("DR");
+
+
         }
 
-    handleRadioChange=(event)=> {
-        console.log(event.target.value);
-        this.setState({
-            ...this.state,
-            [event.target.name]: event.target.value
-        });
+    const identity=(event)=> {
+        setFilling_for_who(event.target.value);
+        console.log(filling_for_who)
         };
+        const currentstate=(event)=> {
+            console.log(state)
+            setState(event.target.value);
+            };
     
-        Male = e => {
-            console.log(this.state.gender)
-        e.preventDefault();
-        this.setState({
-            gender: 'Male'
-        });
-            }
-            Female = e => {
-                console.log(this.state.gender)
+        const Male = e => {
             e.preventDefault();
-            this.setState({
-                gender: 'Female'
-            });
-                }
 
-    handleChange = (event)=> {
+            setGender('Male');
+            console.log(gender)
+
+            }
+        const Female = e => {
+            e.preventDefault();
+
+            setGender('Female');
+            console.log(gender)
+
+
+            }
+
+    const handleChange = (event)=> {
         console.log(event.target.value);
-        this.setState({...this.state,
-            [event.target.name]: event.target.value
-        });
+        
+        setNaphemad({...naphemad, [event.target.name]: event.target.value})
+
         };
-    yestraveled =  e =>{
-        console.log(this.state.traveled)
 
+    const yestraveled =  e =>{
         e.preventDefault();
-            this.setState({
-                traveled: 'true'
-            });
+
+        setTraveled(true);
+        console.log(traveled)
+
                 }
 
-    notraveled =  e =>{
-        console.log(this.state.traveled)
+    const notraveled =  e =>{
         e.preventDefault();
-            this.setState({
-                traveled: 'false'
-            });
+
+        setTraveled(false);
+        console.log(traveled)
                 }
 
-     yestreatment =  e =>{
-        console.log(this.state.treatment)
-        e.preventDefault();
-            this.setState({
-                treatment: 'true'
-            });
+    const  yestreatment =  e =>{
+                e.preventDefault();
+
+                setTreatment(true);
+                console.log(treatment)
                 }
 
-    notreatment =  e =>{
-        console.log(this.state.treatment)
-        e.preventDefault();
-            this.setState({
-                treatment: 'false'
-            });
+    const notreatment =  e =>{
+                e.preventDefault();
+
+        setTreatment(false);
+        console.log(treatment)
+
+
                 }
- yescontact =  e =>{
-    console.log(this.state.contact)
-
+ const yescontact =  e =>{
         e.preventDefault();
-            this.setState({
-                contact: true
-            });
-                }
 
-    nocontact =  e =>{
-        console.log(this.state.contact)
+    setContact(true);
+    console.log(contact)
 
-        e.preventDefault();
-            this.setState({
-                contact: false
-            });
                 }
 
-    open = e =>{
-        console.log(this.state.display)
-        this.setState({
-            display: !this.state.display
-    });
+    const nocontact =  e =>{
+        e.preventDefault();
 
-    }
+        setContact(false);
+        console.log(contact)
 
-    close = e =>{
-        console.log(this.state.display)
 
-        this.setState({
-            display: !this.state.display    
-    })
+                }
+
+    // openModal = e =>{
+    //     console.log(state.display)
+    //     setState({
+    //         display: !state.display
+    // });
+
+    // }
+
+    // closeModal = e =>{
+    //     console.log(state.display)
+    //     e.stopPropagation()
+    //     setState({
+    //         display: !state.display    
+    // })
     
-    }
+    // }
 
-    multiple = button => {
-        let tmp = this.state.values;
-        console.log(tmp)
-        if (this.state.values.includes(button)) {
-            this.setState({
-                values: this.state.values.filter(el => el !== button)
-            })
-        } else {
-            tmp.push(button);
-            this.setState({
-                values: tmp
-            })
-        }
-    }
+    // multiple = button => {
+    //     let tmp = state.values;
+    //     console.log(tmp)
+    //     if (state.values.includes(button)) {
+    //         setState({
+    //             values: state.values.filter(el => el !== button)
+    //         })
+    //     } else {
+    //         tmp.push(button);
+    //         setState({
+    //             values: tmp
+    //         })
+    //     }
+    // }
 
-    render() {
-        if(this.state.display){
+        
             return (
-                <div className='modal-wrapper'  data-v-2d7880ea="">
-                <form className="form" onSubmit={this.handleFormSubmit}>
-                 <button className="close-form"  onClick={this.close}><h1>x</h1></button>
+                <div  data-v-2d7880ea="">
+                    <div className='modal-wrapper' >
+                    <form onSubmit={handleFormSubmit} ref={(node) => (myRef = node)} className="form">
+                 <button className="close-form"  onClick={closeFormModal}><h1>x</h1></button>
 
                 {/* title */}
 
 
-                <div>
-                {BUTTONS.map(bt => (
-                    <p
-                        key={bt.id}
-                        onDoubleClick={() => this.multiple(bt.id)}
-                        className="title-button">
-                        {bt.title}
-                    </p>
-                ))}
-                        {/* {Allsymptoms.map((bt, index) => {
-                                            return <button onClick={() => this.handleMultipleButton(bt[index])}> {bt} </button>
-                                            })} */}
-                {/* <button onClick={this.handleMultipleButton}> click </button> */}
-            </div>
+                
 
 
 
@@ -232,10 +237,10 @@ class ReportForm extends React.Component {
                 <br/>
                 <p>Title</p>
                 <div data-v-2d7880ea="" class="form-field">
-                    <button onClick={this.MR} data-v-2d7880ea="" className="title-button" style={ this.state.title=== "MR" ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>MR</button>
-                    <button onClick={this.MRS} data-v-2d7880ea="" className="title-button" style={ this.state.title=== "MRS" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>MRS</button>
-                    <button onClick={this.MISS} data-v-2d7880ea="" className="title-button" style={ this.state.title=== "MISS" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>MISS</button>
-                    <button onClick={this.DR} data-v-2d7880ea="" className="title-button" style={ this.state.title=== "DR" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>DR</button>
+                    <button onClick={MR} data-v-2d7880ea="" className="title-button" style={ title=== "MR" ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>MR</button>
+                    <button onClick={MRS} data-v-2d7880ea="" className="title-button" style={ title=== "MRS" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>MRS</button>
+                    <button onClick={MISS} data-v-2d7880ea="" className="title-button" style={ title=== "MISS" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>MISS</button>
+                    <button onClick={DR} data-v-2d7880ea="" className="title-button" style={ title=== "DR" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>DR</button>
                 </div><br/>
                 {/* end of title */}
     
@@ -243,9 +248,9 @@ class ReportForm extends React.Component {
                 {/* im filling for who */}
                 <p>im filling for who</p>
                 <div className="input-group mb-3">
-                    <select className="browser-default custom-select" onChange={this.handleRadioChange} id="filling_for_who">
-                        <option value="My Self">my self</option>
-                        <option value="Some One Else">someone else</option>
+                    <select className="browser-default custom-select" defaultValue={filling_for_who} onChange={identity} id="filling_for_who">
+                        <option value="Some One Else">my self</option>
+                        <option value="My Self">someone else</option>
                     </select>
                 </div><br/>
                 {/* end of im filling for who */}
@@ -254,7 +259,7 @@ class ReportForm extends React.Component {
     
                  <div style={{flex: 6}}>
                  <bold><label for ="full_name">Full name</label></bold>
-                    <input value={this.state.full_name} className="form-control form-control-sm" onChange={this.handleChange} id="full_name" type="text" name="full_name" placeholder="full name"></input>
+                    <input value={naphemad.full_name} className="form-control form-control-sm" onChange={handleChange} id="full_name" type="text" name="full_name" placeholder="full name"></input>
                 </div><br/>
     
                 {/* phone number */}
@@ -262,7 +267,7 @@ class ReportForm extends React.Component {
                 <div style={{flex: 6}}>
                 <bold><label for ="phone">Phone Number</label></bold>
     
-                    <input value={this.state.phone} className="form-control form-control-sm" onChange={this.handleChange} id="phone" type="text" name="phone" placeholder="phone"/>
+                    <input value={naphemad.phone} className="form-control form-control-sm" onChange={handleChange} id="phone" type="text" name="phone" placeholder="phone"/>
                     
                 </div><br/>
     
@@ -270,7 +275,7 @@ class ReportForm extends React.Component {
                 <div style={{flex: 6}}>
                 <bold><label for ="email">Email</label></bold>
     
-                    <input value={this.state.email} className="form-control form-control-sm" onChange={this.handleChange} id="email" type="email" name="email" placeholder="email"></input>
+                    <input value={naphemad.email} className="form-control form-control-sm" onChange={handleChange} id="email" type="email" name="email" placeholder="email"></input>
                 </div>
                 <br/>
     
@@ -278,8 +283,8 @@ class ReportForm extends React.Component {
     
                 <p>Gender</p>
                 <div data-v-2d7880ea="" class="form-field">
-                    <button onClick={this.Male} data-v-2d7880ea="" className="title-button" style={ this.state.gender=== "Male" ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Male</button>
-                    <button onClick={this.Female} data-v-2d7880ea="" className="title-button" style={ this.state.gender=== "Female" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>Female</button>
+                    <button onClick={Male} data-v-2d7880ea="" className="title-button" style={ gender=== "Male" ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Male</button>
+                    <button onClick={Female} data-v-2d7880ea="" className="title-button" style={ gender=== "Female" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>Female</button>
                     
                 </div>
                 {/* end okf gender */}
@@ -296,8 +301,8 @@ class ReportForm extends React.Component {
                 <h6>Have you been to any country(ies) outside your country of residence in the past month?</h6>
     
                 <div data-v-2d7880ea="" class="form-field">
-                    <button onClick={this.yestraveled} data-v-2d7880ea="" className="title-button" style={ this.state.traveled=== true ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Yes</button>
-                    <button onClick={this.notraveled} data-v-2d7880ea="" className="title-button" style={ this.state.traveled=== false ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>NO</button>
+                    <button onClick={yestraveled} data-v-2d7880ea="" className="title-button" style={ traveled=== true ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Yes</button>
+                    <button onClick={notraveled} data-v-2d7880ea="" className="title-button" style={ traveled=== false ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>NO</button>
                     
                 </div>
                     <br/><br/>
@@ -310,8 +315,8 @@ class ReportForm extends React.Component {
                             Are you under treatment for any other ailment?
     
                             <div data-v-2d7880ea="" class="form-field">
-                                <button onClick={this.yestreatment} data-v-2d7880ea="" className="title-button" style={ this.state.treatment=== true ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Yes</button>
-                                <button onClick={this.notreatment} data-v-2d7880ea="" className="title-button" style={ this.state.treatment=== false ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>NO</button>
+                                <button onClick={yestreatment} data-v-2d7880ea="" className="title-button" style={ treatment=== true ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Yes</button>
+                                <button onClick={notreatment} data-v-2d7880ea="" className="title-button" style={ treatment=== false ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>NO</button>
                                 
                             </div>
                     <br/><br/>
@@ -326,9 +331,8 @@ class ReportForm extends React.Component {
                             Have you been in contact with any confirmed (COVID-19) case?
     
                             <div data-v-2d7880ea="" class="form-field">
-                                <button onClick={this.yescontact} data-v-2d7880ea="" className="title-button" style={ this.state.contact=== true ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Yes</button>
-                                <button onClick={this.nocontact} data-v-2d7880ea="" className="title-button" style={ this.state.contact=== false ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>NO</button>
-                                
+                                <button onClick={yescontact} data-v-2d7880ea="" className="title-button" style={ contact=== true ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Yes</button>
+                                <button onClick={nocontact} data-v-2d7880ea="" className="title-button" style={ contact=== false ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>NO</button>
                             </div>
                     <br/><br/>                        
                             {/* end of Have you been in contact
@@ -337,7 +341,7 @@ class ReportForm extends React.Component {
                             {/* state */}
                             <p>states</p>
                             <div className="input-group mb-3">
-                                <select className="browser-default custom-select" name="state" onChange={this.handleRadioChange} id="states">
+                                <select className="browser-default custom-select" name="state" onChange={currentstate} id="states">
                                     {nStates.map((nstates, index) => {
                                         return <option value={nstates}>{nstates}</option>
                                         })}
@@ -349,20 +353,21 @@ class ReportForm extends React.Component {
                  {/* address */}
                  <p>address</p>
                     <div style={{}}>    
-              <textarea value={this.state.address} className="form-control form-control-sm" onChange={this.handleChange} placeholder="enter you address" id="address" type="textarea" name="address"/>     
+              <textarea value={naphemad.address} className="form-control form-control-sm" onChange={handleChange} placeholder="enter you address" id="address" type="textarea" name="address"/>     
                 
                     </div><br/>
                     {/* <div data-v-2d7880ea="" className="form-field justify-end"> */}
                     <button data-v-2d7880ea="" type="submit" className="justify-end py-2 px-8 bg-purple-800 text-white hover:bg-orange-600 focus:outline-none text-2xl" >Submit</button>
                     {/* </div>                 */}
-                </form>                
+                    <button className='btn btn-danger float-righ mr-1'>Cancel</button>
+                </form>    
+                    </div>                
                 </div>
     
     
             );
-        }
-        return null;
-    }
+        
+
 }
 
 export default ReportForm;

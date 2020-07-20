@@ -9,9 +9,9 @@
     color: #000;
 }
 */
-                    .navbar-custom .navbar-nav .nav-link {
-                        color:#0000 ;
-                    }
+    /* .navbar-custom .navbar-nav .nav-link {
+        color:#0000 ;
+    }
 
 .risk-checker{
     color:orangered;
@@ -21,7 +21,7 @@
 }
 .link-color{
     columns: #000080;
-} 
+}  */
 
 .pillbutton {
 
@@ -36,10 +36,10 @@
     cursor: pointer;
     border-radius: 16px;
     background-color: #5a67d8;
-    /* text-align: right; */
+    text-align: right;
 
 }
-
+/* 
 nav[data-v-5da7d0aa] {
     background-color: #fff;
     display: flex;
@@ -64,10 +64,10 @@ nav[data-v-5da7d0aa] {
 }
 * {
     transition: all .3s ease-in;
-}
+} */
 
 
-.modal {
+/* .modal {
     position: fixed;
     top: 64px;
     padding: 24px;
@@ -75,4 +75,4 @@ nav[data-v-5da7d0aa] {
     background-color: white;
     border: 1px solid grey;
     border-radius: 3px;
-  }
+  } */
