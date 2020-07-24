@@ -188,17 +188,13 @@ const ReportForm =({closeModal})=> {
                     <div className='modal-wrapper' >
                     <form onSubmit={handleFormSubmit} ref={(node) => (myRef = node)} className="form">
 
-            <div>
-                {values.map((el, index) => <div key={index} onClick={() => onClick(index)}>name: {el.name} / isActive: {el.isActive? "true": "false"}</div>)}
-            </div>
-
 
                 
                     <p>Symptoms</p>
                             <div data-v-2d7880ea="" class="form-field">
                                 
                                     {Allsymptoms.map((simp, index) => {
-                                        return <button onClick={MR} data-v-2d7880ea="" className="title-button" style={ title=== "MR" ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>MR</button>
+                                        return <button onClick={MR} data-v-2d7880ea="" className="title-button" style={ title=== "MR" ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>{simp}</button>
                                         })}
                             </div><br/><br/>
 

@@ -17,14 +17,15 @@ function NewsList({ article }) {
 
             <div className=" col-md-6">
                 <div class="card" style={{width:"18rem;"}}>
+                <img class="card-img-top" src={article.photo} alt="Card image cap"/>
                 <div class="card-body">
                     <h5 class="card-title"> {article.title}</h5>
                     {/* <h6 class="card-subtitle mb-2 text-muted">{article.description}</h6> */}
                     <hr></hr>
-                    <p class="card-text">{article.content}</p>
-                    <p className="dashboard-text Capitalize">Posted at {article.publishedAt}</p>
+                    <p class="card-text">{article.summary}</p>
+                    <p className="dashboard-text Capitalize">Posted at {article.date}</p>
                     <div className="read-more-button">
-                        <a className="read-more-button btn btn-warning" href={article.url} role="button">Read More</a>
+                        <a className="read-more-button btn btn-warning" href={article.link} role="button">Read More</a>
                     </div>
                 </div>
                 </div>                        
@@ -40,22 +41,20 @@ export default function News() {
     const [news, setNews] = useState([]);
         
     useEffect(() => {
-    var url = 'http://newsapi.org/v2/top-headlines?country=ng&category=health&apiKey=9d95875f934f4559bf6f92ea4028e522'
+    var url = 'http://nigeriannewsapi.herokuapp.com/api/search/coronavirus'
 
     axios
       .get(url)
       .then((response) => {
-        setNews(response.data.articles);
-        console.log(response.data);
+        setNews(response.data.data);
+        console.log(response.data.data);
 
-        console.log(response.data);
 
             
       });
   }, []);
   return (
     <Layout>
-        <div style={{marginBottom:"70px"}}></div>
         <div className="body">
         <div className="tasks">
         <p className="dashboard-text">
@@ -71,8 +70,8 @@ export default function News() {
             {news.map((article, index) => (
                 <NewsList
                     article={article}
-                    index={index}
-                    key={index}
+                    index={article.id}
+                    key={article.id}
                 />
             ))}
             </div>
