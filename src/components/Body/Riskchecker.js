@@ -23,13 +23,8 @@ export default function Riskchecker({ props }) {
             (Will take less than 2mins)
         </h3>
         </li>
-            <button type="button" 
-                className="pillbutton mine block
-                focus:outline-none mx-auto px-10
-                rounded-full text-xl font-medium
-                py-2 mt-4 bg-indigo-700 text-white ">
-                    <Link to="/" className="start-button">  start </Link>
-                   
+            <button type="button" className="text-white ">
+                    <Link to="/risk-check" className="pillbutton">  start </Link>  
             </button>
             </ul>   
     </div>

@@ -31,7 +31,7 @@ export default function FirstSection ({ props }) {
 
   return (
     <div className="body">
-    <p className="dashboard-text" style={{marginTop:"70px"}}>
+    <p className="dashboard-text" style={{paddingTop:"50px"}}>
     Dashboard
     </p>
     <h2 className="dashboard-title">
@@ -152,13 +152,9 @@ export default function FirstSection ({ props }) {
     <div className="card-body">
 
 
-    <button type="button" 
-        className="btn2 mine block
-        focus:outline-none mx-auto 
-        px-10 rounded-full text-xl
-        font-medium py-2 mt-4
-        bg-indigo-700 text-white ">
-            <Link to="/" className="nav-link">  Report a case </Link></button>
+    <button type="button"
+        className="pillbutton" style={{textAlign:"right"}}>
+            <Link to="/" className="pillbutton">  Report a case </Link></button>
      <p className="btn">Early Infection Sources</p>
  
     {/* <button  class="pillbutton block focus:outline-none mx-auto px-10 text-xl font-medium py-2 mt-4">

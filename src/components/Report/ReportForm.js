@@ -6,17 +6,20 @@ import './states.js';
 
 const nStates = ['abuja', 'abia', 'adamawa','akwa','anambra','bauchi','bayelsa','benue','borno','cross river','delta','ebonyi','edo','ekiti','enugu','gombe','imo','jigawa','kaduna','kano','katsina','kebbi','kogi','kwara','lagos','nassarawa','niger','ogun','ondo','osun','oyo','plateaue','rivers','sokoto','taraba','yobe','zamfara'];
 
-// const Allsymptoms = ['No symptoms', 'shortness of breadth', 'nasal congestion' ,'dry cough',
-// 'feaver', 'sore throat', 'runny nose', 'diarrhea', 'abdomnalnpain', 'fatigue', 'pressure in the chest'];
-var Allsymptoms=[
-    { id: 0, title: 'No symptoms' },
-    { id: 1, title: 'shortness of breadth' },
-    { id: 2, title: 'nasal congestion' }
-]
+const Allsymptoms = ['No symptoms', 'shortness of breadth', 'nasal congestion' ,'dry cough',
+'feaver', 'sore throat', 'runny nose', 'diarrhea', 'abdomnalnpain', 'fatigue', 'pressure in the chest'];
+
+// var Allsymptoms=[
+//     { id: true, title: 'No symptoms' },
+//     { id: true, title: 'shortness of breadth' },
+//     { id: true, title: 'nasal congestion' }
+// ]
 
 
 const ReportForm =({closeModal})=> {
-    const [values, setValues] = useState([]);
+    const [values, setValues] = useState([{name: "first", isActive: true},{name: "second", isActive: true},{name: "third", isActive: true},{name: "fourth", isActive: true}]);
+    const[me, Setme]=useState([])
+
     const [filling_for_who, setFilling_for_who] = useState('My self');
     const [title, setTitle] = useState('MR');
     const [naphemad, setNaphemad] = useState(
@@ -38,14 +41,7 @@ const ReportForm =({closeModal})=> {
             closeModal();
         }
     }
-    
-
-
-
-
-    
-
-    
+        
     const handleFormSubmit = (event) =>{
         event.preventDefault()
         console.log(event.target.value);
@@ -63,7 +59,7 @@ const ReportForm =({closeModal})=> {
             state:event.target.state.value,
             address:event.target.address.value,
 
-        })
+        })  ;
     }
 
     const MR = e => {
@@ -177,55 +173,34 @@ const ReportForm =({closeModal})=> {
 
                 }
 
-    // openModal = e =>{
-    //     console.log(state.display)
-    //     setState({
-    //         display: !state.display
-    // });
 
-    // }
 
-    // closeModal = e =>{
-    //     console.log(state.display)
-    //     e.stopPropagation()
-    //     setState({
-    //         display: !state.display    
-    // })
-    
-    // }
-
-    // multiple = button => {
-    //     let tmp = state.values;
-    //     console.log(tmp)
-    //     if (state.values.includes(button)) {
-    //         setState({
-    //             values: state.values.filter(el => el !== button)
-    //         })
-    //     } else {
-    //         tmp.push(button);
-    //         setState({
-    //             values: tmp
-    //         })
-    //     }
-    // }
+    const onClick = (index) => {
+        let tmp = values;
+        tmp[index].isActive = !tmp[index].isActive;;
+        Setme(tmp)
+        console.log(me)
+    }
 
         
             return (
                 <div  data-v-2d7880ea="">
                     <div className='modal-wrapper' >
                     <form onSubmit={handleFormSubmit} ref={(node) => (myRef = node)} className="form">
-                 {/* <button className="close-form"  onClick={closeFormModal}><h1>x</h1></button> */}
-                 {/* <button
-          className="btn btn-danger float-right mr-1"
-          onClick={closeFormModal}
-        >
-          Cancel
-        </button> */}
-                {/* title */}
+
+            <div>
+                {values.map((el, index) => <div key={index} onClick={() => onClick(index)}>name: {el.name} / isActive: {el.isActive? "true": "false"}</div>)}
+            </div>
 
 
                 
-
+                    <p>Symptoms</p>
+                            <div data-v-2d7880ea="" class="form-field">
+                                
+                                    {Allsymptoms.map((simp, index) => {
+                                        return <button onClick={MR} data-v-2d7880ea="" className="title-button" style={ title=== "MR" ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>MR</button>
+                                        })}
+                            </div><br/><br/>
 
 
 
@@ -354,7 +329,6 @@ const ReportForm =({closeModal})=> {
                     {/* <div data-v-2d7880ea="" className="form-field justify-end"> */}
                     <button data-v-2d7880ea="" type="submit" className="justify-end py-2 px-8 bg-purple-800 text-white hover:bg-orange-600 focus:outline-none text-2xl" >Submit</button>
                     {/* </div>                 */}
-                    <button className='btn btn-danger float-righ mr-1'>Cancel</button>
                 </form>    
                     </div>                
                 </div>

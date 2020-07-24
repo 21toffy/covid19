@@ -1,14 +1,16 @@
 import React from "react";
-import Navbar from "./Navbar/Navbar";
+import BootstrapNavbar  from "./Navbar/Navbar";
+import Footer  from "./Footer/Footer";
+
 
 export default function Layout({ children }) {
 
   return (
     <div>
-        <Navbar />
-        <div style={{marginBottom:"50px"}}></div>
+        <BootstrapNavbar  />
         {children}
         {/* <ReportForm/> */}
+        <Footer/>
         
     </div>
   );

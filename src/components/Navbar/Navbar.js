@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import "./Navbar.css";
 import { Link } from 'react-router-dom';
 import ReportForm from "./../Report/ReportForm";
+import { Navbar,Nav } from 'react-bootstrap'
 
 
-
-const Navbar = ({props}) => {
-
-    const [showModal, setShowModal] = useState(false);
+const BootstrapNavbar  = ({props}) => {
+  const [showModal, setShowModal] = useState(false);
 
     const handleShowModal =()=>{
         setShowModal(true);
@@ -18,47 +17,36 @@ const Navbar = ({props}) => {
         setShowModal(false);
     }
 
+
+
     return (
-<div>
-    
-<nav className=" navbar navbar-light py-0  bg- navbar-expand-lg py-md-0 relative"data-v-5da7d0aa="" data-v-83937a64="">
-            <div data-v-5da7d0aa="" className="flex items-center h-16 mb-6 mr-3"><a data-v-5da7d0aa="" href="/" className="text-xl font-medium relative text-indigo-800 nuxt-link-active">
+<Navbar collapseOnSelect className='new-nav'  expand="lg"  variant="light">
+  <Navbar.Brand href="#home"><a data-v-5da7d0aa="" href="/" className="text-xl font-medium relative text-indigo-800 nuxt-link-active">
                  KnowCOVID19.
-        <sub data-v-5da7d0aa="" className="mb-2 text-yellow-600">ng</sub></a>         </div>
-            <button className="navbar-toggler mt-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <i className="fa fa-bars"></i>
-            </button>
-            <div className="navbar-collapse justify-content-center link-color collapse" id="navbarNav">
-                <ul className="navbar-nav link-color ">
-                <li className="nav-item py-0 nav-link"><Link to="/" className="nav-link" >DashBoard</Link></li>
-                    <li className="nav-item py-0 nav-link"><Link to="/news-update" className="nav-link">News</Link></li>
-                    <li className="nav-item py-0 nav-link"><Link to="/" className="nav-link">Fact</Link></li>
-                    <li className="nav-item py-0 nav-link" style={{color:"orangered"}}><Link to="/risk-check" style={{color:"orangered"}}className="nav-link  risk-checker">Risk Checker</Link></li>
-                    <li className="nav-item py-0 nav-link"><Link to="/" className="nav-link">Support Us</Link></li>
-                    <li className="nav-item py-0 nav-link"><Link to="/" className="nav-link">About</Link></li>
-                    <li className="nav-item py-0 nav-link"><Link to="/" className="nav-link"><div  className="nav-group flex social">
-                   
-                    {/* <ToggleContent
-                        toggle={show => <button className="pillbutton" onClick={show}>Report a case</button>}
-                        content={hide => (
-                            <div>
-                                <ReportForm/>
-                            <button onClick={hide}>Close</button>
-                            </div>
-                        )}
-                        /> */}
-                        
-                            <button onClick={handleShowModal}  className="pillbutton">
+        <sub data-v-5da7d0aa="" className="mb-2 text-yellow-600">ng</sub></a> </Navbar.Brand>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="ml-auto">
+      <Nav.Link href="#features"><Link to="/" style={{color:"orangered", fontWeight:"bolder"}} className="nav-link" >DashBoard</Link></Nav.Link>
+      
+      <Nav.Link href="#pricing"><Link to="/" style={{fontWeight:"bolder", color:"#00475c"}}className="nav-link">Fact</Link></Nav.Link>
+
+      <Nav.Link href="#pricing"><Link to="/risk-check"style={{fontWeight:"bolder", color:"#00475c"}} className="nav-link  risk-checker">Risk Checker</Link></Nav.Link>
+
+      <Nav.Link href="#pricing"><Link to="/news-update" style={{fontWeight:"bolder", color:"#00475c"}}className="nav-link">News</Link></Nav.Link>
+
+      <Nav.Link href="#pricing"><Link to="/" style={{fontWeight:"bolder", color:"#00475c", textAlign:'center'}}className="nav-link">About</Link></Nav.Link>
+    
+    </Nav>
+    <Nav>
+      {/* <Nav.Link href="#deets">More deets</Nav.Link> */}
+      <button onClick={handleShowModal}  className="pillbutton">
                                 Report a case
                             </button>
-                        
-             </div></Link></li>
-                </ul>
-            </div>
-        </nav>    
-                            {showModal && <ReportForm closeModal={handleCloseModal} />}
-</div>     
-
+    </Nav>
+  </Navbar.Collapse>
+  {showModal && <ReportForm closeModal={handleCloseModal} />}
+</Navbar>
 );}
 
 
@@ -66,4 +54,4 @@ const Navbar = ({props}) => {
 
 
 
-export default Navbar;
+export default BootstrapNavbar ;

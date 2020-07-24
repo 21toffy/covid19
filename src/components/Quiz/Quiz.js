@@ -9,6 +9,7 @@ import { QuizData } from './QuizData';
 
 class Quiz extends React.Component{
     state={
+        toggle:false,
         userAnswer: null,
         currentQuestion: 0,
         options: [],
@@ -21,6 +22,11 @@ class Quiz extends React.Component{
         
     }
 
+    openselftest = () =>{
+        this.setState({
+            toggle : !this.state.toggle
+        })
+    }
 
     loadQuiz = () =>{
         const {currentQuestion} =this.state;
@@ -121,34 +127,58 @@ class Quiz extends React.Component{
                 </div>
             )
         }
-        return(
-            <div>
-            <Navbar/>
-                <div className="body">
-                    <p className="dashboard-text">Risk Checker</p>
-                    <h3 className="dashboard-title">CoronaVirus Self Assesment Test</h3>
-                    
-                    <div className="risk">
-                        <h5 className="risk">  
-                        {questions}
-                        </h5>
-                    </div>
-                    {/* {currentQuestion === QuizData.length - 1 } */}
-                {options.map(option =>(
-                    <button key={option.id} style={{backgroundColor: option==='no' ? "orange":''  }} className="mybutton" onClick={() => {
-                        this.checkAnswer(option); 
-                        this.nextQuestionHandler();
-                        this.finishHandler();
-                    }}>
-                        {option}
+        if(this.state.toggle){
+            return(
+                <div>
+                <Navbar/>
+                    <div className="body">
+                        <p className="dashboard-text">Risk Checker</p>
+                        <h3 className="dashboard-title">CoronaVirus Self Assesment Test</h3>
                         
-                    </button>
-
-                ))}
+                        <div className="question" data-v-83937a64>
+                            <h5 className="risk">  
+                            {questions}
+                            </h5>
+                        </div>
+                        {/* {currentQuestion === QuizData.length - 1 } */}
+                    {options.map(option =>(
+                        <button key={option.id}  className="option" data-v-83937a64 onClick={() => {
+                            this.checkAnswer(option); 
+                            this.nextQuestionHandler();
+                            this.finishHandler();
+                        }}>
+                            {option}
+                            
+                        </button>
+    
+                    ))}
+                    </div>
                 </div>
-            </div>
-
-        )
+    
+            )
+        }
+        return <div>
+            <Navbar/>
+            <div className="body">
+                        <p className="dashboard-text">Risk Checker</p>
+                        <h3 className="dashboard-title">CoronaVirus Self Assesment Test</h3>
+                        
+                        <div className="question" data-v-83937a64>
+                            <h5 className="risk">  
+                            Hello! This risk check self assesment was developed based on the
+            guidelines from the WHO. This assesment should not be taken as a
+            medical advice. Any information you share with us will be kept
+            strictly confidential.
+                            </h5>
+                        </div>
+                    
+                        <button  className="mybutton" onClick={this.openselftest}>
+                            Start                               
+                        </button>
+    
+                    </div>
+                </div>
+            ;
     }
 }
 

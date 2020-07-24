@@ -152,12 +152,10 @@ export default function FirstSection ({ props }) {
 
 
     {/* <button type="button" className="btn2 mine block focus:outline-none mx-auto px-10 rounded-full text-xl font-medium py-2 mt-4 bg-indigo-700 text-white ">report now</button> */}
-     <p className="btn">Early Infection Sources</p>
+     <p style={{paddingTop:""}}className="btn">Early Infection Sources</p>
  
-    <button  class="pillbutton block focus:outline-none mx-auto px-10 text-xl font-medium py-2 mt-4">
-                             Report a case
-                         </button>
        
+    <button onClick={props.showModal} class="">Report a case</button>
        
         
     </div>
