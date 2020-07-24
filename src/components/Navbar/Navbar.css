@@ -23,7 +23,7 @@
     columns: #000080;
 }  */
 
-.pillbutton {
+.navpillbutton {
 
     background-color: rgb(155, 152, 152);
     border: none;
@@ -36,7 +36,6 @@
     cursor: pointer;
     border-radius: 16px;
     background-color: #5a67d8;
-    text-align: right;
 
 }
 /* 

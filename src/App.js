@@ -12,6 +12,8 @@ import News from "./components/News/News";
 import Quiz from "./components/Quiz/Quiz";
 import Body from "./components/Body/Body";
 
+import multiple from "./components/Body/multiple";
+
 
 
 import formModalWrapper from "./components/Report/ReportForm";
@@ -25,6 +27,7 @@ function App() {
           <Route path="/risk-check" exact component={Quiz} /> 
           <Route path="/news-update" component={News} />
           <Route path="/Report" component={formModalWrapper} />
+          <Route path="/multiple" component={multiple} />
 
         </Switch>
       </Router>

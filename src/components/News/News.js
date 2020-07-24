@@ -41,7 +41,7 @@ export default function News() {
     const [news, setNews] = useState([]);
         
     useEffect(() => {
-    var url = 'http://nigeriannewsapi.herokuapp.com/api/search/coronavirus'
+    var url = 'https://nigeriannewsapi.herokuapp.com/api/search/coronavirus'
 
     axios
       .get(url)

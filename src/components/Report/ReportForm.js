@@ -17,6 +17,8 @@ const Allsymptoms = ['No symptoms', 'shortness of breadth', 'nasal congestion' ,
 
 
 const ReportForm =({closeModal})=> {
+
+    const [success, setSuccess] = useState(true);
     const [values, setValues] = useState([{name: "first", isActive: true},{name: "second", isActive: true},{name: "third", isActive: true},{name: "fourth", isActive: true}]);
     const[me, Setme]=useState([])
 
@@ -43,8 +45,7 @@ const ReportForm =({closeModal})=> {
     }
         
     const handleFormSubmit = (event) =>{
-        event.preventDefault()
-        console.log(event.target.value);
+        // event.preventDefault()
         axios.post('http://127.0.0.1:8000/report/', {
             // symptoms:event.target.symptoms.value,
             filling_for_who:event.target.filling_for_who.value,
@@ -59,41 +60,11 @@ const ReportForm =({closeModal})=> {
             state:event.target.state.value,
             address:event.target.address.value,
 
-        })  ;
-    }
+        }).then((response) => {
+            closeFormModal(event)
+    })}
 
-    const MR = e => {
-        e.preventDefault();
-        console.log(title)
-        setTitle("MR");
     
-    }
-    
-    const MRS = e => {
-        e.preventDefault();
-
-        console.log(title)
-        setTitle("MRS");
-
-    }
-
-    const MISS = e => {
-        e.preventDefault();
-
-        console.log(title)
-        setTitle("MISS");
-
-    }
-
-    const DR = e => {
-        e.preventDefault();
-
-        console.log(title)
-        setTitle("DR");
-
-
-        }
-
     const identity=(event)=> {
         setFilling_for_who(event.target.value);
         console.log(filling_for_who)
@@ -103,21 +74,7 @@ const ReportForm =({closeModal})=> {
             setState(event.target.value);
             };
     
-        const Male = e => {
-            e.preventDefault();
-
-            setGender('Male');
-            console.log(gender)
-
-            }
-        const Female = e => {
-            e.preventDefault();
-
-            setGender('Female');
-            console.log(gender)
-
-
-            }
+       
 
     const handleChange = (event)=> {
         console.log(event.target.value);
@@ -125,53 +82,6 @@ const ReportForm =({closeModal})=> {
         setNaphemad({...naphemad, [event.target.name]: event.target.value})
 
         };
-
-    const yestraveled =  e =>{
-        e.preventDefault();
-
-        setTraveled(true);
-        console.log(traveled)
-
-                }
-
-    const notraveled =  e =>{
-        e.preventDefault();
-
-        setTraveled(false);
-        console.log(traveled)
-                }
-
-    const  yestreatment =  e =>{
-                e.preventDefault();
-
-                setTreatment(true);
-                console.log(treatment)
-                }
-
-    const notreatment =  e =>{
-                e.preventDefault();
-
-        setTreatment(false);
-        console.log(treatment)
-
-
-                }
- const yescontact =  e =>{
-        e.preventDefault();
-
-    setContact(true);
-    console.log(contact)
-
-                }
-
-    const nocontact =  e =>{
-        e.preventDefault();
-
-        setContact(false);
-        console.log(contact)
-
-
-                }
 
 
 
@@ -182,32 +92,37 @@ const ReportForm =({closeModal})=> {
         console.log(me)
     }
 
-        
+    const  successfulsubmital = e =>{
+        e.preventDefault();
+
+        setSuccess(false);
+    }      
+    if(success){  
             return (
                 <div  data-v-2d7880ea="">
                     <div className='modal-wrapper' >
                     <form onSubmit={handleFormSubmit} ref={(node) => (myRef = node)} className="form">
 
-
+                    <button inClick={closeFormModal()} style={{color:"red", }}>X</button>
                 
                     <p>Symptoms</p>
-                            <div data-v-2d7880ea="" class="form-field">
+                            {/* <div data-v-2d7880ea="" class="form-field">
                                 
                                     {Allsymptoms.map((simp, index) => {
-                                        return <button onClick={MR} data-v-2d7880ea="" className="title-button" style={ title=== "MR" ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>{simp}</button>
+                                        return <button type='button' onClick={MR} data-v-2d7880ea="" className="title-button" style={ title=== "MR" ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>{simp}</button>
                                         })}
-                            </div><br/><br/>
+                            </div><br/><br/> */}
 
 
 
                 <br/>
                 <p>Title</p>
                 <div data-v-2d7880ea="" class="form-field">
-                    <button onClick={MR} data-v-2d7880ea="" className="title-button" style={ title=== "MR" ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>MR</button>
-                    <button onClick={MRS} data-v-2d7880ea="" className="title-button" style={ title=== "MRS" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>MRS</button>
-                    <button onClick={MISS} data-v-2d7880ea="" className="title-button" style={ title=== "MISS" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>MISS</button>
-                    <button onClick={DR} data-v-2d7880ea="" className="title-button" style={ title=== "DR" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>DR</button>
-                </div><br/>
+                    <button type='button' onClick={e => setTitle("MR")} data-v-2d7880ea="" className="title-button" style={ title=== "MR" ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>MR</button>
+                    <button type='button' onClick={e => setTitle("MRS")} data-v-2d7880ea="" className="title-button" style={ title=== "MRS" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>MRS</button>
+                    <button type='button' onClick={e => setTitle("MISS")} data-v-2d7880ea="" className="title-button" style={ title=== "MISS" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>MISS</button>
+                    <button type='button' onClick={e => setTitle("DR")} data-v-2d7880ea="" className="title-button" style={ title=== "DR" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>DR</button>
+                </div><br/><br/> 
                 {/* end of title */}
     
     
@@ -249,10 +164,10 @@ const ReportForm =({closeModal})=> {
     
                 <p>Gender</p>
                 <div data-v-2d7880ea="" class="form-field">
-                    <button onClick={Male} data-v-2d7880ea="" className="title-button" style={ gender=== "Male" ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Male</button>
-                    <button onClick={Female} data-v-2d7880ea="" className="title-button" style={ gender=== "Female" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>Female</button>
+                    <button type='button' onClick={e => setGender("Male")} data-v-2d7880ea="" className="title-button" style={ gender=== "Male" ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Male</button>
+                    <button type='button' onClick={e => setGender("Female")} data-v-2d7880ea="" className="title-button" style={ gender=== "Female" ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>Female</button>
                     
-                </div>
+                </div><br/><br/>
                 {/* end okf gender */}
     
                 {/* symptoms */}
@@ -267,9 +182,8 @@ const ReportForm =({closeModal})=> {
                 <h6>Have you been to any country(ies) outside your country of residence in the past month?</h6>
     
                 <div data-v-2d7880ea="" class="form-field">
-                    <button onClick={yestraveled} data-v-2d7880ea="" className="title-button" style={ traveled=== true ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Yes</button>
-                    <button onClick={notraveled} data-v-2d7880ea="" className="title-button" style={ traveled=== false ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>NO</button>
-                    
+                    <button type='button' onClick={e => setTraveled(true)} data-v-2d7880ea="" className="title-button" style={ traveled=== true ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Yes</button>
+                    <button type='button' onClick={e => setTraveled(false)} data-v-2d7880ea="" className="title-button" style={ traveled=== false ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>NO</button>
                 </div>
                     <br/><br/>
                     {/* end of Have you been to any country(ies) outside 
@@ -281,8 +195,8 @@ const ReportForm =({closeModal})=> {
                             Are you under treatment for any other ailment?
     
                             <div data-v-2d7880ea="" class="form-field">
-                                <button onClick={yestreatment} data-v-2d7880ea="" className="title-button" style={ treatment=== true ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Yes</button>
-                                <button onClick={notreatment} data-v-2d7880ea="" className="title-button" style={ treatment=== false ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>NO</button>
+                                <button type='button' onClick={e => setTreatment(true)} data-v-2d7880ea="" className="title-button" style={ treatment=== true ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Yes</button>
+                                <button type='button' onClick={e => setTreatment(false)} data-v-2d7880ea="" className="title-button" style={ treatment=== false ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>NO</button>
                                 
                             </div>
                     <br/><br/>
@@ -297,8 +211,8 @@ const ReportForm =({closeModal})=> {
                             Have you been in contact with any confirmed (COVID-19) case?
     
                             <div data-v-2d7880ea="" class="form-field">
-                                <button onClick={yescontact} data-v-2d7880ea="" className="title-button" style={ contact=== true ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Yes</button>
-                                <button onClick={nocontact} data-v-2d7880ea="" className="title-button" style={ contact=== false ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>NO</button>
+                                <button type='button' onClick={e => setContact(true)} data-v-2d7880ea="" className="title-button" style={ contact=== true ?{ backgroundColor:"#4c51bf", color:"#fff"} : {}}>Yes</button>
+                                <button type='button' onClick={e => setContact(false)} data-v-2d7880ea="" className="title-button" style={ contact=== false ?{ backgroundColor:"#4c51bf", color:"#fff" } : {}}>NO</button>
                             </div>
                     <br/><br/>                        
                             {/* end of Have you been in contact
@@ -307,7 +221,7 @@ const ReportForm =({closeModal})=> {
                             {/* state */}
                             <p>states</p>
                             <div className="input-group mb-3">
-                                <select className="browser-default custom-select" name="state" onChange={currentstate} id="states">
+                                <select className="browser-default custom-select" name="state" onChange={e => setState(e.target.value)} id="states">
                                     {nStates.map((nstates, index) => {
                                         return <option value={nstates}>{nstates}</option>
                                         })}
@@ -323,14 +237,24 @@ const ReportForm =({closeModal})=> {
                 
                     </div><br/>
                     {/* <div data-v-2d7880ea="" className="form-field justify-end"> */}
-                    <button data-v-2d7880ea="" type="submit" className="justify-end py-2 px-8 bg-purple-800 text-white hover:bg-orange-600 focus:outline-none text-2xl" >Submit</button>
+                    <button type='button'  data-v-2d7880ea="" type="submit" className="justify-end py-2 px-8 bg-purple-800 text-white hover:bg-orange-600 focus:outline-none text-2xl" >Submit</button>
                     {/* </div>                 */}
                 </form>    
                     </div>                
                 </div>
     
     
-            );
+            )}
+                return <div className='modal-wrapper'>
+                            <div className='form' ref={(node) => (myRef = node)} >
+                                <button type='button' onClick={closeFormModal()}>xxx</button>
+                                <p>
+                                    hello workms
+                                </p>
+                            </div>
+                        </div>
+
+                ;
         
 
 }
