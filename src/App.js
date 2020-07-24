@@ -17,6 +17,7 @@ import multiple from "./components/Body/multiple";
 
 
 import formModalWrapper from "./components/Report/ReportForm";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   return (
@@ -25,9 +26,10 @@ function App() {
         <Switch>
           <Route path="/" exact component={Body} />
           <Route path="/risk-check" exact component={Quiz} /> 
-          <Route path="/news-update" component={News} />
-          <Route path="/Report" component={formModalWrapper} />
-          <Route path="/multiple" component={multiple} />
+          <Route path="/news-update" exact component={News} />
+          <Route path="/Report" exact component={formModalWrapper} />
+          <Route path="/multiple" exact component={multiple} />
+          <Route  component={NotFound} />
 
         </Switch>
       </Router>
