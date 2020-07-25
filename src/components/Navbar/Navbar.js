@@ -9,8 +9,8 @@ const BootstrapNavbar  = ({props}) => {
 
     return (
 <Navbar collapseOnSelect className='new-nav'  expand="lg"  variant="light">
-  <Navbar.Brand style={{color:"#008080"}} className="navbrand text-xl font-medium relative text-indigo-800 nuxt-link-active" >WearOff
-        <sub data-v-5da7d0aa="" style={{color:"#437317"}} className="mb-2 text-yellow-600">Covid19</sub>
+  <Navbar.Brand style={{color:"#008080"}} className="navbrand text-xl font-medium relative text-indigo-800 nuxt-link-active" ><Link to="/"style={{fontWeight:"bolder", color:"#00475c"}} className="nav-link  risk-checker">WearOff
+        <sub data-v-5da7d0aa="" style={{color:"#437317"}} className="mb-2 text-yellow-600">Covid19</sub></Link>
   </Navbar.Brand>
         
   <Navbar.Toggle className="order-first" aria-controls="responsive-navbar-nav" />
