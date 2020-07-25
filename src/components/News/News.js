@@ -47,7 +47,6 @@ export default function News() {
       .get(url)
       .then((response) => {
         setNews(response.data.data);
-        console.log(response.data.data);
 
 
             

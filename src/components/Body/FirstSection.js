@@ -16,7 +16,6 @@ export default function FirstSection ({ props }) {
       .then((response) => {
         setOverall(response.data.data);
         setState(response.data.data.states)
-        console.log(response.data.data.states);
 
         
             

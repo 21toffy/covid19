@@ -1,30 +1,63 @@
-.soul{
-    background-color:#f5f7fa;
-    border-color:#565757 ;
-    position: fixed;
-   bottom: 0;
+table, th, td {
+   border: 1px solid black;
+ }
+ 
+#footer {
    left: 0;
-   right: 0;
+   bottom: 0;
    width: 100%;
-   z-index: 999;
+      clear: both;
+      height: 60px; 
+      margin-top: -151px; 
+   font-size: 16;
+   text-rendering: auto;
+   position: fixed;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+  }
+.tableft {
+   float: left;
+   background-color:#e2e8f0 ;
+   width: 40%;
+   height: 250px;
+   color: #00001A;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   
+
+
+}
+.tabrigth {
+   float: right;
+   background-color: #e2e8f0;
+   width: 35%;
+   height: 250px;
+   color: white;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   
+}
+.tabcenter {
+   float: right;
+   background-color: #e2e8f0;
+   width: 25%;
+   height: 250px;
+   color: white;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   
 }
 
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color:#f5f7fa;
-    border-color:#2f2f30;
-    font-weight: 900;
-    color: orangered;
-    text-align: left;
- }
+.ni{
+   padding-bottom: 10px;
+}
 
- /* .mytext{
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: right;
-    padding-bottom: 30px;
- } */
+.navbrand{
+   color:orangered;
+
+   font-family: 'Aladin', cursive;
+   
+   font-family: 'Rancho', cursive;
+   
+   font-family: 'Sriracha', cursive;
+}

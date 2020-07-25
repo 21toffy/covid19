@@ -9,64 +9,40 @@ const Footer  = ({props}) => {
   
       return (
           
-<footer classname="soul footer page-footer font-small blue fixed-bottom">
-  <div className="row">
-    {/* Grid column */}
-    <div className="col-md-4 mx-auto">
-      {/* Content */}
-      <sub data-v-5da7d0aa="" style={{color:"#437317", paddingLeft:"1px"}} className="mb-2 text-yellow-600">Covid19</sub>  
-    </div>
-    {/* Grid column */}
-    <hr className="clearfix w-100 d-md-none" />
-    {/* Grid column */}
-    <div className="col-md-2 mx-auto">
-      {/* Links */}
-      <ul className="list-unstyled">
-        <li>
-        <a data-v-44e2cb14="" class='mr-auto' rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/Know-Covid-19-110856247214930/">
-                 <img data-v-44e2cb14="" src="/images/facebook.png" alt="fb" class="icon"/>
-        </a> 
-        </li>
+<footer className="container-fluid w-100 bg-dark text-light py-3">
+  <div id="footer"> 
+    <div className="tableft">
+
+      <p className="navbrand" style={{paddingTop:"20px"}}>
         
-      </ul>
-    </div>
-    {/* Grid column */}
-    <hr className="clearfix w-100 d-md-none" />
-    {/* Grid column */}
-    <div className="col-md-2 mx-auto">
-      {/* Links */}
-      <ul className="list-unstyled">
-        <li>
-        <a data-v-44e2cb14="" rel="noopener noreferrer" target="_blank"
-         href="whatsapp://send?text=Take%20this%20simple%20test%20to%20find%20out%20your%20COVID-19%20Risk%20factor on https://knowvid19.ng/risk-check">
+      WearOff <sub data-v-5da7d0aa="" style={{color:"#437317", paddingLeft:"-3px"}} className="mb-2 text-yellow-600">Covid19</sub>
+      </p></div>
+    <div className="tabcenter ni">
+      <p>
+      </p><table  >
+        <tbody className="ni" ><tr >
+            <th style={{border: "1px solid #e2e8f0"}} ><a data-v-44e2cb14="" class="ml-auto" rel="noopener noreferrer" target="_blank" href="https://twitter.com/wearoffcovid19">
+        <span class="iconify" data-icon="openmoji:twitter" data-inline="false"></span>        </a>
+              <br /></th>
+            <th style={{border: "1px solid #e2e8f0"}}><a data-v-44e2cb14="" class='mr-auto' rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/">
+                <img data-v-44e2cb14="" src="/images/facebook.png" alt="fb" class="icon"/>
+        </a>
+              <br /></th>
+            <th style={{border: "1px solid #e2e8f0"}}><a data-v-44e2cb14="" rel="noopener noreferrer" target="_blank"
+         href="">
             <span class="iconify" data-icon="logos:whatsapp" data-inline="true"></span>
         </a>
-        </li>
-        </ul>
+              <br /></th>
+            
+          </tr>
+        </tbody></table>
+      <p />
     </div>
-    {/* Grid column */}
-    <hr className="clearfix w-100 d-md-none" />
-    {/* Grid column */}
-    <div className="col-md-2 mx-auto">
-      {/* Links */}
-      <h5 className="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-      <ul className="list-unstyled">
-        <li>
-          <a href="#!">Link 1</a>
-        </li>
-        
-      </ul>
+    <div className="tabrigth">
+     
     </div>
-    {/* Grid column */}
   </div>
-  {/* Grid row */}
 </footer>
-
-
-
-
-
-
 
 
 
@@ -87,25 +63,16 @@ export default Footer ;
         
 //     </a> 
 //     <div data-v-44e2cb14="" class="soul social">
-//         <a data-v-44e2cb14="" class="ml-auto" rel="noopener noreferrer" target="_blank" href="https://twitter.com/wearoffcovid19">
-//         <span class="iconify" data-icon="openmoji:twitter" data-inline="false"></span>        </a>
-//         <a data-v-44e2cb14="" class='mr-auto' rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/Know-Covid-19-110856247214930/">
-//                 <img data-v-44e2cb14="" src="/images/facebook.png" alt="fb" class="icon"/>
-//         </a> 
+        
+         
         
         
-//         <a data-v-44e2cb14="" rel="noopener noreferrer" target="_blank"
-//          href="whatsapp://send?text=Take%20this%20simple%20test%20to%20find%20out%20your%20COVID-19%20Risk%20factor on https://knowvid19.ng/risk-check">
-//             <span class="iconify" data-icon="logos:whatsapp" data-inline="true"></span>
-//         </a>
+        
 
 //     <div class="ml-auto">
         
 //     </div>
-//         <a class="ml-auto" rel="noopener noreferrer" target="_blank"
-//          href="whatsapp://send?text=Take%20this%20simple%20test%20to%20find%20out%20your%20COVID-19%20Risk%20factor on https://knowvid19.ng/risk-check">
-            
-//         </a>
+        
 //     </div>
 // </footer> */}
 
