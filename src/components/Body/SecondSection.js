@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Body.css";
 import axios from "axios";
+import ReportForm from './../Report/ReportForm';
 
 export default function FirstSection ({ props }) {
 
@@ -155,7 +156,10 @@ export default function FirstSection ({ props }) {
      <p style={{paddingTop:""}}className="btn">Early Infection Sources</p>
  
        
-    <button onClick={props.showModal} class="">Report a case</button>
+    <button onClick={props.showModal} class="">
+    Report a case
+    </button>
+    
        
         
     </div>

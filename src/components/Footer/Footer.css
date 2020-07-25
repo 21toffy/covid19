@@ -1,6 +1,6 @@
 .soul{
     background-color:#f5f7fa;
-    border-color:#adafb3 ;
+    border-color:#565757 ;
     position: fixed;
    bottom: 0;
    left: 0;
@@ -8,3 +8,23 @@
    width: 100%;
    z-index: 999;
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#f5f7fa;
+    border-color:#2f2f30;
+    font-weight: 900;
+    color: orangered;
+    text-align: left;
+ }
+
+ /* .mytext{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: right;
+    padding-bottom: 30px;
+ } */

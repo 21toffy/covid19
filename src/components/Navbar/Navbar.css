@@ -38,45 +38,14 @@
     background-color: #5a67d8;
 
 }
-/* 
-nav[data-v-5da7d0aa] {
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    height: 4rem;
-    align-items: center;
-    border-width: 2px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 50;
+.navbrand{
+
+    font-family: 'Aladin', cursive;
+    
+    font-family: 'Rancho', cursive;
+    
+    font-family: 'Sriracha', cursive;
 }
-.relative {
-    position: relative;
-}
-*, ::after, ::before {
-    box-sizing: border-box;
-    margin: 0;
-}
-* {
-    transition: all .3s ease-in;
-} */
-
-
-/* .modal {
-    position: fixed;
-    top: 64px;
-    padding: 24px;
-    left: 64px;
-    background-color: white;
-    border: 1px solid grey;
-    border-radius: 3px;
-  } */
-
-
 
 .new-nav{
     background-color: #fff;

@@ -6,24 +6,12 @@ import { Navbar,Nav } from 'react-bootstrap'
 
 
 const BootstrapNavbar  = ({props}) => {
-  const [showModal, setShowModal] = useState(false);
-
-    const handleShowModal =()=>{
-        setShowModal(true);
-    }
-
-
-    const handleCloseModal =()=>{
-        setShowModal(false);
-    }
-
-
 
     return (
 <Navbar collapseOnSelect className='new-nav'  expand="lg"  variant="light">
-  <Navbar.Brand href="#home"><a data-v-5da7d0aa="" href="/" className="text-xl font-medium relative text-indigo-800 nuxt-link-active">
-                 KnowCOVID19.
-        <sub data-v-5da7d0aa="" className="mb-2 text-yellow-600">ng</sub></a> </Navbar.Brand>
+  <Navbar.Brand style={{color:"#008080"}} className="navbrand text-xl font-medium relative text-indigo-800 nuxt-link-active" >WearOff
+        <sub data-v-5da7d0aa="" style={{color:"#437317"}} className="mb-2 text-yellow-600">Covid19</sub>
+  </Navbar.Brand>
         
   <Navbar.Toggle className="order-first" aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
@@ -44,10 +32,11 @@ const BootstrapNavbar  = ({props}) => {
     </Nav>
 
   </Navbar.Collapse>
-  <button onClick={handleShowModal}  className="navpillbutton">
+  {/* <button onClick={handleShowModal}  className="navpillbutton">
                                 Report a case
-                            </button>
-  {showModal && <ReportForm closeModal={handleCloseModal} />}
+                            </button> */}
+                            <ReportForm/>
+  {/* {showModal && <ReportForm closeModal={handleCloseModal} />} */}
 </Navbar>
 );}
 
