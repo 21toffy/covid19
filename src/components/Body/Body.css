@@ -47,6 +47,7 @@
 }
 .table-extra{
     color:black;
+    background-color: #fff;
 }
 table, th, td {
     color:#fff;
@@ -60,13 +61,13 @@ table, th, td {
   }
 
 .confirmed{
-    background-color: yellow;
+    background-color: #feebc8;
 }
 .death{
-    background-color: red;
+    background-color: #fed7d7;
 }
 .discharged{
-    background-color: yellowgreen;
+    background-color: #c6f6d5;
 }
 
 .contain img {
